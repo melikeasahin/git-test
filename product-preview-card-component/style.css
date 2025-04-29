@@ -1,0 +1,131 @@
+:root {
+    --green-500: hsl(158, 36%, 37%);
+    --green-700: hsl(158, 42%, 18%);
+    --black: hsl(212, 21%, 14%);
+    --grey: hsl(228, 12%, 48%);
+    --cream: hsl(30, 38%, 92%);
+    --white: hsl(0, 0%, 100%);
+    --font-montserrat: 'Montserrat', sans-serif;
+    --font-fraunces: 'Fraunces', serif;
+}
+
+body {
+    background-color: var(--cream);
+    font-family: var(--font-montserrat);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 2rem;
+    min-height: 100vh;
+    margin: 0;
+}
+
+.product-card {
+    background-color: var(--white);
+    border-radius: 10px;
+    overflow: hidden;
+    display: flex;
+    flex-direction: row;
+    max-width: 600px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+}
+
+.product-image {
+    width: 50%;
+    object-fit: cover;
+    display: block;
+}
+
+.product-info {
+    width: 50%;
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.category {
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    color: var(--grey);
+    font-size: 14px;
+}
+
+.title {
+    font-family: var(--font-fraunces);
+    font-size: 32px;
+    color: var(--black);
+    margin: 0.5rem 0;
+}
+
+.description {
+    font-size: 14px;
+    color: var(--grey);
+    line-height: 1.6;
+    font-weight: 500;
+}
+
+.price-box {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin: 1rem 0;
+}
+
+.price {
+    font-family: var(--font-fraunces);
+    font-size: 28px;
+    color: var(--green-500);
+    font-weight: 700;
+}
+
+.orginal-price {
+    font-size: 14px;
+    text-decoration: line-through;
+    color: var(--grey);
+    font-weight: 500;
+}
+
+.add-to-cart {
+    background-color: var(--green-500);
+    color: var(--white);
+    border: none;
+    padding: 1rem;
+    border-radius: 8px;
+    font-weight: 700;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+
+.add-to-cart:hover,
+.add-to-cart:focus {
+  background-color: var(--green-700);
+  outline: 2px solid var(--green-700);
+  outline-offset: 0.1px;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .product-card {
+      flex-direction: column;
+      max-width: 375px;
+      width: 100%;
+    }
+  
+    .product-image {
+      width: 100%;
+      height: auto;
+      content: url("./images/image-product-mobile.jpg"); /* mobile image automatically swaps */
+    }
+  
+    .product-info {
+      width: 92%;
+      padding: 1.5rem;
+      box-sizing: border-box;
+    }
+  }
